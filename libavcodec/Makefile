@@ -844,6 +844,7 @@ OBJS-$(CONFIG_NVDEC)                      += nvdec.o
 OBJS-$(CONFIG_VAAPI)                      += vaapi_decode.o
 OBJS-$(CONFIG_VIDEOTOOLBOX)               += videotoolbox.o
 OBJS-$(CONFIG_VDPAU)                      += vdpau.o
+OBJS-$(CONFIG_RKVDEC)                     += allocator_drm.o
 
 OBJS-$(CONFIG_H263_VAAPI_HWACCEL)         += vaapi_mpeg4.o
 OBJS-$(CONFIG_H263_VIDEOTOOLBOX_HWACCEL)  += videotoolbox.o
@@ -891,6 +892,7 @@ OBJS-$(CONFIG_VP9_DXVA2_HWACCEL)          += dxva2_vp9.o
 OBJS-$(CONFIG_VP9_NVDEC_HWACCEL)          += nvdec_vp9.o
 OBJS-$(CONFIG_VP9_VAAPI_HWACCEL)          += vaapi_vp9.o
 OBJS-$(CONFIG_VP8_QSV_HWACCEL)            += qsvdec_other.o
+OBJS-$(CONFIG_H264_RKVDEC_HWACCEL)        += rkvdec_h264.o rkvdec341_h264.o
 
 # libavformat dependencies
 OBJS-$(CONFIG_ISO_MEDIA)               += mpeg4audio.o mpegaudiodata.o

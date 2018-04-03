@@ -1078,6 +1078,9 @@ AVCodec ff_h264_decoder = {
 #if CONFIG_H264_VIDEOTOOLBOX_HWACCEL
                                HWACCEL_VIDEOTOOLBOX(h264),
 #endif
+#if CONFIG_H264_RKVDEC_HWACCEL
+                               HWACCEL_RKVDEC(h264),
+#endif
                                NULL
                            },
     .caps_internal         = FF_CODEC_CAP_INIT_THREADSAFE | FF_CODEC_CAP_EXPORTS_CROPPING,

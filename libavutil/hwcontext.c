@@ -59,6 +59,9 @@ static const HWContextType * const hw_table[] = {
 #if CONFIG_MEDIACODEC
     &ff_hwcontext_type_mediacodec,
 #endif
+#if CONFIG_RKVDEC
+    &ff_hwcontext_type_drm,
+#endif
     NULL,
 };
 
@@ -73,6 +76,7 @@ static const char *const hw_type_names[] = {
     [AV_HWDEVICE_TYPE_VDPAU]  = "vdpau",
     [AV_HWDEVICE_TYPE_VIDEOTOOLBOX] = "videotoolbox",
     [AV_HWDEVICE_TYPE_MEDIACODEC] = "mediacodec",
+    [AV_HWDEVICE_TYPE_DRM]    = "rkvdec",
 };
 
 enum AVHWDeviceType av_hwdevice_find_type_by_name(const char *name)

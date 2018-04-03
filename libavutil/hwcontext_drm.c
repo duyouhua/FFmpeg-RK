@@ -43,6 +43,9 @@ static int drm_device_create(AVHWDeviceContext *hwdev, const char *device,
     AVDRMDeviceContext *hwctx = hwdev->hwctx;
     drmVersionPtr version;
 
+    if (device == NULL)
+        device = "/dev/dri/card0";
+
     hwctx->fd = open(device, O_RDWR);
     if (hwctx->fd < 0)
         return AVERROR(errno);
