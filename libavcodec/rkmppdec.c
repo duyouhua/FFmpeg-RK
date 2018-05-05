@@ -71,6 +71,7 @@ static MppCodingType rkmpp_get_codingtype(AVCodecContext *avctx)
     case AV_CODEC_ID_HEVC:          return MPP_VIDEO_CodingHEVC;
     case AV_CODEC_ID_VP8:           return MPP_VIDEO_CodingVP8;
     case AV_CODEC_ID_VP9:           return MPP_VIDEO_CodingVP9;
+    case AV_CODEC_ID_MPEG2VIDEO:    return MPP_VIDEO_CodingMPEG2;
     default:                        return MPP_VIDEO_CodingUnused;
     }
 }
@@ -584,3 +585,4 @@ RKMPP_DEC(h264,  AV_CODEC_ID_H264,          "h264_mp4toannexb")
 RKMPP_DEC(hevc,  AV_CODEC_ID_HEVC,          "hevc_mp4toannexb")
 RKMPP_DEC(vp8,   AV_CODEC_ID_VP8,           NULL)
 RKMPP_DEC(vp9,   AV_CODEC_ID_VP9,           NULL)
+RKMPP_DEC(mpeg2, AV_CODEC_ID_MPEG2VIDEO,    NULL)

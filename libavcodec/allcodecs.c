@@ -760,6 +760,7 @@ extern AVCodec ff_vp8_vaapi_encoder;
 extern AVCodec ff_vp9_cuvid_decoder;
 extern AVCodec ff_vp9_mediacodec_decoder;
 extern AVCodec ff_vp9_vaapi_encoder;
+extern AVCodec ff_mpeg2_rkmpp_decoder;
 
 #include "libavcodec/codec_list.c"
 
