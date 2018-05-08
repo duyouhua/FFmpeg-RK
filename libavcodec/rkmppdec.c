@@ -388,8 +388,7 @@ static int rkmpp_retrieve_frame(AVCodecContext *avctx, AVFrame *frame)
             goto fail;
         } else if (mpp_frame_get_errinfo(mppframe)) {
             av_log(avctx, AV_LOG_ERROR, "Received a errinfo frame.\n");
-            ret = AVERROR_UNKNOWN;
-            goto fail;
+            frame->decode_error_flags |= FF_DECODE_ERROR_MISSING_REFERENCE;
         }
 
         // here we should have a valid frame
