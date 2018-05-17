@@ -289,7 +289,7 @@ static int rkmpp_send_packet(AVCodecContext *avctx, const AVPacket *avpkt)
         if (avctx->extradata_size) {
             ret = rkmpp_write_data(avctx, avctx->extradata,
                                             avctx->extradata_size,
-                                            avpkt->pts);
+                                            avpkt->pts != AV_NOPTS_VALUE ? avpkt->pts : avpkt->dts);
             if (ret) {
                 av_log(avctx, AV_LOG_ERROR, "Failed to write extradata to decoder (code = %d)\n", ret);
                 return ret;
@@ -299,7 +299,7 @@ static int rkmpp_send_packet(AVCodecContext *avctx, const AVPacket *avpkt)
     }
 
     // now send packet
-    ret = rkmpp_write_data(avctx, avpkt->data, avpkt->size, avpkt->pts);
+    ret = rkmpp_write_data(avctx, avpkt->data, avpkt->size, avpkt->pts != AV_NOPTS_VALUE ? avpkt->pts : avpkt->dts);
     if (ret && ret!=AVERROR(EAGAIN))
         av_log(avctx, AV_LOG_ERROR, "Failed to write data to decoder (code = %d)\n", ret);
 
